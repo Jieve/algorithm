@@ -7,7 +7,7 @@ import util.MathUtil;
 
 /**
 * @ClassName: HeapSort
-* @Description: 堆排序实现
+* @Description: 堆排序实现(本实例采用大堆方式)
 * @author yyy
 * @date 2017年11月14日 下午2:11:41
 * 

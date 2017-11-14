@@ -3,6 +3,7 @@ package algorithm;
 import java.io.IOException;
 import java.util.List;
 
+import implement.BinarySelectionSort;
 import implement.HeapSort;
 import implement.SimpleSelectionSort;
 import interfaces.Sort;
@@ -21,15 +22,18 @@ public class MainEntrance {
 		
 		List<Integer> list1 = null;
 		List<Integer> list2 = null;
+		List<Integer> list3 = null;
 		try {
 			list1 = FileUtil.getSortCondition("sort.data");
-			list2 = FileUtil.getSortCondition("sort.data");
+			list2 = FileUtil.getSortCondition("sort.data"); 
+			list3 = FileUtil.getSortCondition("sort.data"); 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		Sort heapSort = new HeapSort();
 		Sort simpleSelectionSort = new SimpleSelectionSort();
+		Sort binarySelectionSort = new BinarySelectionSort();
 		
 		long start = System.nanoTime();
 		heapSort.process(list1);
@@ -43,6 +47,12 @@ public class MainEntrance {
 		end = System.nanoTime();
 		System.out.println(list2);
 		System.out.println("简单选择排序耗时：" + (end - start) + "ns");
+		
+		start = System.nanoTime();
+		binarySelectionSort.process(list3);
+		end = System.nanoTime();
+		System.out.println(list3);
+		System.out.println("二分选择排序耗时：" + (end - start) + "ns");
 		
 		
 //		//生成排序算法测试数据

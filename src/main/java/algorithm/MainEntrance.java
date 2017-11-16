@@ -54,7 +54,20 @@ public class MainEntrance {
 		System.out.println(list3);
 		System.out.println("二分选择排序耗时：" + (end - start) + "ns");
 		
-		
+		for (int i = 0; i < list1.size(); i++) {
+			if (Integer.compare(list1.get(i), list2.get(i)) != 0) {
+				System.out.println(i+ "_" + list1.get(i) + "_" + list2.get(i));
+			}
+			
+		}
+		System.out.println("1、2比较完毕");
+		for (int i = 0; i < list1.size(); i++) {
+			if (Integer.compare(list1.get(i), list3.get(i)) != 0) {
+				System.out.println(i+ "_" + list1.get(i) + "_" + list3.get(i));
+			}
+			
+		}
+		System.out.println("1、3比较完毕");
 //		//生成排序算法测试数据
 //		try {
 //			FileUtil.generateSortData("sort.data");

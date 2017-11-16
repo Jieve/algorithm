@@ -19,13 +19,16 @@ public class HeapSort extends BaseSort implements Sort {
 	int right;
 	int temp;
 
+	public HeapSort(List<Integer> originalList) {
+		super(originalList);
+	}
+
 	@Override
-	public void process(List<Integer> originalList) {
+	public void process() {
 		
 		if (null == originalList||originalList.isEmpty()) {
 			return;
 		}
-		this.originalList = originalList;
 
 		int n = this.originalList.size();
 

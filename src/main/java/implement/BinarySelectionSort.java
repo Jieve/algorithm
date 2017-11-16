@@ -13,12 +13,15 @@ import interfaces.Sort;
 */
 public class BinarySelectionSort extends BaseSort implements Sort {
 	
+	public BinarySelectionSort(List<Integer> originalList) {
+		super(originalList);
+	}
+
 	@Override
-	public void process(List<Integer> originalList) {
+	public void process() {
 		if (null == originalList||originalList.isEmpty()) {
 			return;
 		}
-		this.originalList = originalList;
 		
 		for (int i = 0; i < this.originalList.size()/2; i++) {
 			int temp;

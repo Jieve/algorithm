@@ -12,4 +12,8 @@ import java.util.List;
 public class BaseSort {
 
 	List<Integer> originalList = null;
+	
+	public BaseSort(List<Integer> originalList){
+		this.originalList = originalList;
+	}
 }

@@ -34,33 +34,33 @@ public class MainEntrance {
 			e.printStackTrace();
 		}
 		
-		Sort heapSort = new HeapSort();
-		Sort simpleSelectionSort = new SimpleSelectionSort();
-		Sort binarySelectionSort = new BinarySelectionSort();
-		Sort straightInsertionSort = new StraightInsertionSort();
+		Sort heapSort = new HeapSort(list1);
+		Sort simpleSelectionSort = new SimpleSelectionSort(list2);
+		Sort binarySelectionSort = new BinarySelectionSort(list3);
+		Sort straightInsertionSort = new StraightInsertionSort(list4);
 		
 		long start = System.nanoTime();
-		heapSort.process(list1);
+		heapSort.process();
 		long end = System.nanoTime();
 		System.out.println(list1);
 		System.out.println("堆排序耗时：" + (end - start) + "ns");
 		
 		
 		start = System.nanoTime();
-		simpleSelectionSort.process(list2);
+		simpleSelectionSort.process();
 		end = System.nanoTime();
 		System.out.println(list2);
 		System.out.println("简单选择排序耗时：" + (end - start) + "ns");
 		
 		start = System.nanoTime();
-		binarySelectionSort.process(list3);
+		binarySelectionSort.process();
 		end = System.nanoTime();
 		System.out.println(list3);
 		System.out.println("二分选择排序耗时：" + (end - start) + "ns");
 		
 		
 		start = System.nanoTime();
-		straightInsertionSort.process(list4);
+		straightInsertionSort.process();
 		end = System.nanoTime();
 		System.out.println(list4);
 		System.out.println("直接插入排序耗时：" + (end - start) + "ns");

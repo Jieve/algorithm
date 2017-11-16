@@ -13,12 +13,15 @@ import interfaces.Sort;
 */
 public class SimpleSelectionSort extends BaseSort implements Sort {
 	
+	public SimpleSelectionSort(List<Integer> originalList) {
+		super(originalList);
+	}
+
 	@Override
-	public void process(List<Integer> originalList) {
+	public void process() {
 		if (null == originalList||originalList.isEmpty()) {
 			return;
 		}
-		this.originalList = originalList;
 		int temp;
 		int index = 0;
 		int cur;

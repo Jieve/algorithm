@@ -11,9 +11,7 @@ import interfaces.Sort;
 * @date 2017年11月14日 下午6:19:22
 * 
 */
-public class BinarySelectionSort implements Sort {
-	
-	List<Integer> originalList = null;
+public class BinarySelectionSort extends BaseSort implements Sort {
 	
 	@Override
 	public void process(List<Integer> originalList) {

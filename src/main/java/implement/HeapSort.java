@@ -12,9 +12,8 @@ import util.MathUtil;
 * @date 2017年11月14日 下午2:11:41
 * 
 */
-public class HeapSort implements Sort {
+public class HeapSort extends BaseSort implements Sort {
 	
-	List<Integer> originalList = null;
 	int cur;
 	int left;
 	int right;

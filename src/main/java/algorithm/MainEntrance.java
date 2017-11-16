@@ -6,6 +6,7 @@ import java.util.List;
 import implement.BinarySelectionSort;
 import implement.HeapSort;
 import implement.SimpleSelectionSort;
+import implement.StraightInsertionSort;
 import interfaces.Sort;
 import util.FileUtil;
 
@@ -23,10 +24,12 @@ public class MainEntrance {
 		List<Integer> list1 = null;
 		List<Integer> list2 = null;
 		List<Integer> list3 = null;
+		List<Integer> list4 = null;
 		try {
 			list1 = FileUtil.getSortCondition("sort.data");
 			list2 = FileUtil.getSortCondition("sort.data"); 
 			list3 = FileUtil.getSortCondition("sort.data"); 
+			list4 = FileUtil.getSortCondition("sort.data"); 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -34,6 +37,7 @@ public class MainEntrance {
 		Sort heapSort = new HeapSort();
 		Sort simpleSelectionSort = new SimpleSelectionSort();
 		Sort binarySelectionSort = new BinarySelectionSort();
+		Sort straightInsertionSort = new StraightInsertionSort();
 		
 		long start = System.nanoTime();
 		heapSort.process(list1);
@@ -54,6 +58,13 @@ public class MainEntrance {
 		System.out.println(list3);
 		System.out.println("二分选择排序耗时：" + (end - start) + "ns");
 		
+		
+		start = System.nanoTime();
+		straightInsertionSort.process(list4);
+		end = System.nanoTime();
+		System.out.println(list4);
+		System.out.println("直接插入排序耗时：" + (end - start) + "ns");
+		
 		for (int i = 0; i < list1.size(); i++) {
 			if (Integer.compare(list1.get(i), list2.get(i)) != 0) {
 				System.out.println(i+ "_" + list1.get(i) + "_" + list2.get(i));
@@ -68,6 +79,13 @@ public class MainEntrance {
 			
 		}
 		System.out.println("1、3比较完毕");
+		for (int i = 0; i < list1.size(); i++) {
+			if (Integer.compare(list1.get(i), list4.get(i)) != 0) {
+				System.out.println(i+ "_" + list1.get(i) + "_" + list4.get(i));
+			}
+			
+		}
+		System.out.println("1、4比较完毕");
 //		//生成排序算法测试数据
 //		try {
 //			FileUtil.generateSortData("sort.data");

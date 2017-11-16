@@ -11,10 +11,8 @@ import interfaces.Sort;
 * @date 2017年11月14日 下午5:50:14
 * 
 */
-public class SimpleSelectionSort implements Sort {
+public class SimpleSelectionSort extends BaseSort implements Sort {
 	
-	List<Integer> originalList = null;
-
 	@Override
 	public void process(List<Integer> originalList) {
 		if (null == originalList||originalList.isEmpty()) {

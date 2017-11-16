@@ -22,7 +22,7 @@ public class BinaryInsertionSort extends BaseSort implements Sort {
 			while (j != k) {
 				System.out.println("j:" + j + ", k:" + k);
 				System.out.println((j + k) / 2);
-				if (originalList.get(i) > originalList.get((j + k) / 2)) {
+				if (originalList.get(i) < originalList.get((j + k) / 2)) {
 					j = (j + k) / 2;
 				} else if (originalList.get(i) > originalList.get((j + k) / 2)) {
 					k = (j + k) / 2;

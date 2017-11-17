@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import implement.BinaryInsertionSort;
-import implement.StraightInsertionSort;
 import interfaces.Sort;
 
 public class Test {

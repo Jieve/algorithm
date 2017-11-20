@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import implement.BinaryInsertionSort;
+import implement.TwoPathInsertionSort;
 import interfaces.Sort;
 
 public class Test {
@@ -20,6 +21,8 @@ public class Test {
 		list1.add(1);
 //		Sort binarySelectionSort = new StraightInsertionSort(list1);
 		Sort binaryInsertionSort = new BinaryInsertionSort(list1);
+		
+//		Sort twoPathInsertionSort = new TwoPathInsertionSort(list1);
 		binaryInsertionSort.process();
 		System.out.println(list1);
 		

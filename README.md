@@ -13,8 +13,8 @@
 
 ***
 
-<font color=DeepPink size=2>注：排序算法测试数据文件sort.data,由工具类FileUtil生成，读者可修改该工具类的代码以更改测试数据的规模，
-另外测试算法性能入口为MainEntrance,可通过run as Java Application测试观察不同规模数据的各个算法的差异</font>
+注：排序算法测试数据文件sort.data,由工具类FileUtil生成，读者可修改该工具类的代码以更改测试数据的规模，
+另外测试算法性能入口为MainEntrance,可通过run as Java Application测试观察不同规模数据下各个算法的差异
 
 有疑问请联系jieve_y@163.com
 

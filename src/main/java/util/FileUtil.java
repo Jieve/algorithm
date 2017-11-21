@@ -60,7 +60,7 @@ public class FileUtil {
 		}
 		StringBuffer sb = new StringBuffer();
 		String temp = null;
-		while((temp = reader.readLine()) != null){
+		while ((temp = reader.readLine()) != null) {
 			sb.append(temp);
 		}
 		return sb.toString();
@@ -91,13 +91,22 @@ public class FileUtil {
 		String temp = null;
 		int line = 1;
 		while ((temp = reader.readLine()) != null) {
-			
+
 			map.put(String.valueOf(line), temp);
 			line++;
 		}
 		return map;
 	}
 	
+	/**
+	* @Title: getSortCondition
+	* @Description: 将排序算法待排序数据从文件取出并打包成list
+	* @param @param fileName
+	* @param @return
+	* @param @throws IOException    param
+	* @return List<Integer>    returnType
+	* @throws
+	*/
 	public static final List<Integer> getSortCondition(String fileName) throws IOException {
 		if (null == fileName || "".equals(fileName.trim())) {
 			return null;
@@ -112,7 +121,7 @@ public class FileUtil {
 		}
 		StringBuffer sb = new StringBuffer();
 		String temp = null;
-		while((temp = reader.readLine()) != null){
+		while ((temp = reader.readLine()) != null) {
 			sb.append(temp);
 		}
 		List<Integer> list = new LinkedList<>();
@@ -142,17 +151,17 @@ public class FileUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-			StringBuffer sb = new StringBuffer();
-			for (int i = 0; i <= 5000; i++) {
-				Random random = new Random();
-				sb.append(random.nextInt(10000)).append(",");
-			}
-			try {
-				writer.write(sb.toString().substring(0,sb.length()-1));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}finally {
-				writer.close();
-			}
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i <= 5000; i++) {
+			Random random = new Random();
+			sb.append(random.nextInt(10000)).append(",");
 		}
+		try {
+			writer.write(sb.toString().substring(0, sb.length() - 1));
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			writer.close();
+		}
+	}
 }

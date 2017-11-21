@@ -25,13 +25,12 @@ public class Test {
 		list1.add(10);
 		list1.add(2);
 		list1.add(1);
-//		Sort binarySelectionSort = new StraightInsertionSort(list1);
-//		Sort binaryInsertionSort = new BinaryInsertionSort(list1);
-		
+		// Sort binarySelectionSort = new StraightInsertionSort(list1);
+		// Sort binaryInsertionSort = new BinaryInsertionSort(list1);
+
 		Sort twoPathInsertionSort = new TwoPathInsertionSort(list1);
 		twoPathInsertionSort.process();
 		System.out.println(list1);
-		
-		
+
 	}
 }

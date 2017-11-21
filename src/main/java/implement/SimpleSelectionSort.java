@@ -5,21 +5,21 @@ import java.util.List;
 import interfaces.Sort;
 
 /**
-* @ClassName: SimpleSelectionSort
-* @Description: 简单选择排序（小值在前）
-* @author yyy
-* @date 2017年11月14日 下午5:50:14
-* 
-*/
+ * @ClassName: SimpleSelectionSort
+ * @Description: 简单选择排序（小值在前）
+ * @author yyy
+ * @date 2017年11月14日 下午5:50:14
+ * 
+ */
 public class SimpleSelectionSort extends BaseSort implements Sort {
-	
+
 	public SimpleSelectionSort(List<Integer> originalList) {
 		super(originalList);
 	}
 
 	@Override
 	public void process() {
-		if (null == originalList||originalList.isEmpty()) {
+		if (null == originalList || originalList.isEmpty()) {
 			return;
 		}
 		int temp;
@@ -33,7 +33,7 @@ public class SimpleSelectionSort extends BaseSort implements Sort {
 					min = temp;
 					index = j;
 				}
-				
+
 			}
 			cur = originalList.get(i);
 			if (min < cur) {

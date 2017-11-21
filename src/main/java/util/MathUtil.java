@@ -1,7 +1,5 @@
 package util;
 
-import java.util.Random;
-
 /**
 * @ClassName: MathUtil
 * @Description: 项目计算和比较类型工具类
@@ -18,7 +16,7 @@ public class MathUtil {
 	* @param @param cur
 	* @param @param right
 	* @param @return    param
-	* @return boolean    returnType
+	* @return boolean
 	* @throws
 	*/
 	public static boolean toLeft(int left, int cur, int right) {
@@ -32,18 +30,11 @@ public class MathUtil {
 	* @param @param cur
 	* @param @param right
 	* @param @return    param
-	* @return boolean    returnType
+	* @return boolean
 	* @throws
 	*/
 	public static boolean toRight(int left, int cur, int right) {
 		return right > cur && right > left;
 	}
 	
-	public static boolean toRandomLeft(int left, int cur, int right) {
-		if (right > cur&&left > cur&&right==left) {
-			Random random = new Random();
-			return random.nextBoolean();
-		}
-		return false;
-	}
 }

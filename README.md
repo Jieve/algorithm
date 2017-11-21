@@ -10,7 +10,8 @@
 2. 插入排序：
 	* StraightInsertionSort（直接插入排序）
 	* BinaryInsertionSort（二分插入排序）
-	* BinaryInsertionSort（2—路插入排序）
+	* TwoPathInsertionSort（2—路插入排序）
+	* ShellInsertSort（希尔插入排序）
 
 ***
 

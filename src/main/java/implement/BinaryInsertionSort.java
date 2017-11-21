@@ -4,6 +4,13 @@ import java.util.List;
 
 import interfaces.Sort;
 
+/**
+* @ClassName: BinaryInsertionSort
+* @Description: 二分插入排序算法实现
+* @author yyy
+* @date 2017年11月21日 下午6:05:42
+* 
+*/
 public class BinaryInsertionSort extends BaseSort implements Sort {
 
 	public BinaryInsertionSort(List<Integer> originalList) {
@@ -21,13 +28,13 @@ public class BinaryInsertionSort extends BaseSort implements Sort {
 			int right = i - 1;
 			int median = 0;
 			while (left <= right) {
-				median = (left + right)/2;
+				median = (left + right) / 2;
 				if (originalList.get(i) > originalList.get(median)) {
 					left = median + 1;
 					median++;
 				} else if (originalList.get(i) < originalList.get(median)) {
 					right = median - 1;
-				}else {
+				} else {
 					while (originalList.get(i) == originalList.get(median)) {
 						median++;
 					}

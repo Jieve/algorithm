@@ -7,6 +7,7 @@ import implement.BinarySelectionSort;
 import implement.HeapSort;
 import implement.SimpleSelectionSort;
 import implement.StraightInsertionSort;
+import implement.TwoPathInsertionSort;
 import interfaces.Sort;
 import util.FileUtil;
 
@@ -26,12 +27,14 @@ public class MainEntrance {
 		List<Integer> list3 = null;
 		List<Integer> list4 = null;
 		List<Integer> list5 = null;
+		List<Integer> list6 = null;
 		try {
 			list1 = FileUtil.getSortCondition("sort.data");
 			list2 = FileUtil.getSortCondition("sort.data"); 
 			list3 = FileUtil.getSortCondition("sort.data"); 
 			list4 = FileUtil.getSortCondition("sort.data"); 
 			list5 = FileUtil.getSortCondition("sort.data"); 
+			list6 = FileUtil.getSortCondition("sort.data"); 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -41,6 +44,7 @@ public class MainEntrance {
 		Sort binarySelectionSort = new BinarySelectionSort(list3);
 		Sort straightInsertionSort = new StraightInsertionSort(list4);
 		Sort binaryInsertionSort = new BinarySelectionSort(list5);
+		Sort twoPathInsertionSort = new TwoPathInsertionSort(list6);
 		
 		long start = System.nanoTime();
 		heapSort.process();
@@ -71,8 +75,14 @@ public class MainEntrance {
 		start = System.nanoTime();
 		binaryInsertionSort.process();
 		end = System.nanoTime();
-		System.out.println(list4);
+		System.out.println(list5);
 		System.out.println("二分插入排序耗时：" + (end - start) + "ns");
+		
+		start = System.nanoTime();
+		twoPathInsertionSort.process();
+		end = System.nanoTime();
+		System.out.println(list6);
+		System.out.println("二路插入排序耗时：" + (end - start) + "ns");
 		
 		for (int i = 0; i < list1.size(); i++) {
 			if (Integer.compare(list1.get(i), list2.get(i)) != 0) {
@@ -102,6 +112,14 @@ public class MainEntrance {
 			
 		}
 		System.out.println("1、5比较完毕");
+		
+		for (int i = 0; i < list1.size(); i++) {
+			if (Integer.compare(list1.get(i), list6.get(i)) != 0) {
+				System.out.println(i+ "_" + list1.get(i) + "_" + list6.get(i));
+			}
+			
+		}
+		System.out.println("1、6比较完毕");
 //		//生成排序算法测试数据
 //		try {
 //			FileUtil.generateSortData("sort.data");

@@ -27,7 +27,7 @@ public class TwoPathInsertionSort extends BaseSort implements Sort {
 		List<Integer> targetList = new LinkedList<>();
 		int start;
 		int end;
-		int median;
+		int median = 0;
 		for (int i = 0; i < originalList.size(); i++) {
 			if (targetList.isEmpty()) {
 				targetList.add(originalList.get(i));
@@ -50,24 +50,36 @@ public class TwoPathInsertionSort extends BaseSort implements Sort {
 				{
 					start = 0;
 					end = targetList.size()-1;
-					while (start != end) {
-						System.out.println("start:" + start + ", end:" + end);
-						if (targetList.get((start + end)/2) > originalList.get(i)) {
-							end = (start + end)/2;
-						} else if(targetList.get((start + end)/2) < originalList.get(i)){
-							start = (start + end)/2;
+					while (start <= end) {
+						median = (start + end)/2;
+						if (originalList.get(i) > targetList.get(median)) {
+							start = median + 1;
+							median++;
+						} else if (originalList.get(i) < targetList.get(median)) {
+							end = median - 1;
+						}else {
+							while (originalList.get(i) == targetList.get(median)) {
+								median++;
+							}
+							break;
 						}
 					}
+					
 					targetList.add(0);
-					for (int j = targetList.size()-1; j >= start; j--) {
+					for (int j = targetList.size()-2; j >= median; j--) {
 						targetList.set(j+1, targetList.get(j));
 						
 					}
-					targetList.set(start, originalList.get(i));
+					targetList.set(median, originalList.get(i));
 					
 				}
 			}
 		}
+		
+//		originalList = targetList;
+		originalList.clear();
+		originalList.addAll(targetList);
+		
 	}
 
 }

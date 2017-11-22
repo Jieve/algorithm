@@ -8,6 +8,13 @@ package util;
 * 
 */
 public class MathUtil {
+	
+	/**
+	* <p>Title: 私有构造函数</p>
+	* <p>Description: 即不允许实例化</p>
+	*/
+	private MathUtil() {
+	}
 
 	/**
 	* @Title: toLeft

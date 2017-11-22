@@ -36,6 +36,13 @@ import java.util.Random;
 public class FileUtil {
 
 	public static final String ROOTPATH = "src/main/resources/";
+	
+	/**
+	* <p>Title:私有构造函数 </p>
+	* <p>Description:即不允许实例化 </p>
+	*/
+	private FileUtil() {
+	}
 
 	/**
 	* @Title: getCondition

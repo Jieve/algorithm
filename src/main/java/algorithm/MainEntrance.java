@@ -5,6 +5,7 @@ import java.util.List;
 
 import implement.BinarySelectionSort;
 import implement.HeapSort;
+import implement.ShellInsertSort;
 import implement.SimpleSelectionSort;
 import implement.StraightInsertionSort;
 import implement.TwoPathInsertionSort;
@@ -28,6 +29,7 @@ public class MainEntrance {
 		List<Integer> list4 = null;
 		List<Integer> list5 = null;
 		List<Integer> list6 = null;
+		List<Integer> list7 = null;
 		try {
 			list1 = FileUtil.getSortCondition("sort.data");
 			list2 = FileUtil.getSortCondition("sort.data");
@@ -35,6 +37,7 @@ public class MainEntrance {
 			list4 = FileUtil.getSortCondition("sort.data");
 			list5 = FileUtil.getSortCondition("sort.data");
 			list6 = FileUtil.getSortCondition("sort.data");
+			list7 = FileUtil.getSortCondition("sort.data");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -45,6 +48,7 @@ public class MainEntrance {
 		Sort straightInsertionSort = new StraightInsertionSort(list4);
 		Sort binaryInsertionSort = new BinarySelectionSort(list5);
 		Sort twoPathInsertionSort = new TwoPathInsertionSort(list6);
+		Sort shellInsertSort = new ShellInsertSort(list7);
 
 		long start = System.nanoTime();
 		heapSort.process();
@@ -81,6 +85,12 @@ public class MainEntrance {
 		end = System.nanoTime();
 		System.out.println(list6);
 		System.out.println("二路插入排序耗时：" + (end - start) + "ns");
+		
+		start = System.nanoTime();
+		shellInsertSort.process();
+		end = System.nanoTime();
+		System.out.println(list7);
+		System.out.println("希尔插入排序耗时：" + (end - start) + "ns");
 
 		for (int i = 0; i < list1.size(); i++) {
 			if (Integer.compare(list1.get(i), list2.get(i)) != 0) {
@@ -118,6 +128,14 @@ public class MainEntrance {
 
 		}
 		System.out.println("1、6比较完毕");
+		
+		for (int i = 0; i < list1.size(); i++) {
+			if (Integer.compare(list1.get(i), list7.get(i)) != 0) {
+				System.out.println(i + "_" + list1.get(i) + "_" + list7.get(i));
+			}
+
+		}
+		System.out.println("1、7比较完毕");
 		// //生成排序算法测试数据
 		// try {
 		// FileUtil.generateSortData("sort.data");

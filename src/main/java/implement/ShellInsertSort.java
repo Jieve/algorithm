@@ -19,7 +19,7 @@ public class ShellInsertSort extends BaseSort implements Sort {
 
 	@Override
 	public void process() {
-		if (null == originalList || originalList.isEmpty()) {
+		if (null == originalList || originalList.size() <= 1) {
 			return;
 		}
 		int d = originalList.size();

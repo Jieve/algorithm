@@ -26,7 +26,7 @@ public class HeapSort extends BaseSort implements Sort {
 	@Override
 	public void process() {
 
-		if (null == originalList || originalList.isEmpty()) {
+		if (null == originalList || originalList.size() <= 1) {
 			return;
 		}
 

@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import implement.BinaryInsertionSort;
+import implement.BubbleSort;
 import implement.ShellInsertSort;
 import implement.TwoPathInsertionSort;
 import interfaces.Sort;
@@ -29,8 +30,9 @@ public class Test {
 		// Sort binarySelectionSort = new StraightInsertionSort(list1);
 		// Sort binaryInsertionSort = new BinaryInsertionSort(list1);
 //		Sort twoPathInsertionSort = new TwoPathInsertionSort(list1);
-		Sort shellInsertSort = new ShellInsertSort(list1);
-		shellInsertSort.process();
+//		Sort shellInsertSort = new ShellInsertSort(list1);
+		Sort bubbleSort = new BubbleSort(list1);
+		bubbleSort.process();
 		System.out.println(list1);
 
 	}

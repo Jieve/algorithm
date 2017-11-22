@@ -12,6 +12,9 @@
 	* BinaryInsertionSort（二分插入排序）
 	* TwoPathInsertionSort（2—路插入排序）
 	* ShellInsertSort（希尔插入排序）
+3. 交换排序：
+	* BubbleSort（冒泡排序）
+	* QuickSort（快速排序）
 	
 
 各时间复杂度下数据量与运行时间的比较：

@@ -5,6 +5,7 @@ import java.util.List;
 
 import implement.BinaryInsertionSort;
 import implement.BubbleSort;
+import implement.ImprovedBubbleSort;
 import implement.ShellInsertSort;
 import implement.TwoPathInsertionSort;
 import interfaces.Sort;
@@ -31,8 +32,8 @@ public class Test {
 		// Sort binaryInsertionSort = new BinaryInsertionSort(list1);
 //		Sort twoPathInsertionSort = new TwoPathInsertionSort(list1);
 //		Sort shellInsertSort = new ShellInsertSort(list1);
-		Sort bubbleSort = new BubbleSort(list1);
-		bubbleSort.process();
+		Sort improvedBubbleSort = new ImprovedBubbleSort(list1);
+		improvedBubbleSort.process();
 		System.out.println(list1);
 
 	}

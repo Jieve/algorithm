@@ -14,6 +14,7 @@
 	* ShellInsertSort（希尔插入排序）
 3. 交换排序：
 	* BubbleSort（冒泡排序）
+	* ImprovedBubbleSort（改进的冒泡排序）
 	* QuickSort（快速排序）
 	
 

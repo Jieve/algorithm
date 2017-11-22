@@ -6,6 +6,7 @@ import java.util.List;
 import implement.BinarySelectionSort;
 import implement.BubbleSort;
 import implement.HeapSort;
+import implement.ImprovedBubbleSort;
 import implement.ShellInsertSort;
 import implement.SimpleSelectionSort;
 import implement.StraightInsertionSort;
@@ -32,6 +33,7 @@ public class MainEntrance {
 		List<Integer> list6 = null;
 		List<Integer> list7 = null;
 		List<Integer> list8 = null;
+		List<Integer> list9 = null;
 		try {
 			list1 = FileUtil.getSortCondition("sort.data");
 			list2 = FileUtil.getSortCondition("sort.data");
@@ -41,6 +43,7 @@ public class MainEntrance {
 			list6 = FileUtil.getSortCondition("sort.data");
 			list7 = FileUtil.getSortCondition("sort.data");
 			list8 = FileUtil.getSortCondition("sort.data");
+			list9 = FileUtil.getSortCondition("sort.data");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -53,6 +56,7 @@ public class MainEntrance {
 		Sort twoPathInsertionSort = new TwoPathInsertionSort(list6);
 		Sort shellInsertSort = new ShellInsertSort(list7);
 		Sort bubbleSort = new BubbleSort(list8);
+		Sort improvedBubbleSort = new ImprovedBubbleSort(list9);
 
 		long start = System.nanoTime();
 		heapSort.process();
@@ -101,6 +105,12 @@ public class MainEntrance {
 		end = System.nanoTime();
 		System.out.println(list8);
 		System.out.println("冒泡排序耗时：" + (end - start) + "ns");
+		
+		start = System.nanoTime();
+		improvedBubbleSort.process();
+		end = System.nanoTime();
+		System.out.println(list9);
+		System.out.println("改善的冒泡排序耗时：" + (end - start) + "ns");
 
 		for (int i = 0; i < list1.size(); i++) {
 			if (Integer.compare(list1.get(i), list2.get(i)) != 0) {
@@ -154,6 +164,14 @@ public class MainEntrance {
 
 		}
 		System.out.println("1、8比较完毕");
+		
+		for (int i = 0; i < list1.size(); i++) {
+			if (Integer.compare(list1.get(i), list9.get(i)) != 0) {
+				System.out.println(i + "_" + list1.get(i) + "_" + list9.get(i));
+			}
+
+		}
+		System.out.println("1、9比较完毕");
 		
 		
 		

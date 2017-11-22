@@ -12,6 +12,11 @@
 	* BinaryInsertionSort（二分插入排序）
 	* TwoPathInsertionSort（2—路插入排序）
 	* ShellInsertSort（希尔插入排序）
+	
+
+各时间复杂度下数据量与运行时间的比较：
+
+ <img src="http://my.csdn.net/uploads/201207/21/1342856655_3698.jpg"></img>
 
 ***
 

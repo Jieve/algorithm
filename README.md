@@ -15,6 +15,7 @@
 3. 交换排序：
 	* BubbleSort（冒泡排序）
 	* ImprovedBubbleSort（改进的冒泡排序）
+	* BinaryBubbleSort（折半的冒泡排序）
 	* QuickSort（快速排序）
 	
 

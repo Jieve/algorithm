@@ -3,6 +3,7 @@ package algorithm;
 import java.io.IOException;
 import java.util.List;
 
+import implement.BinaryBubbleSort;
 import implement.BinarySelectionSort;
 import implement.BubbleSort;
 import implement.HeapSort;
@@ -12,6 +13,7 @@ import implement.SimpleSelectionSort;
 import implement.StraightInsertionSort;
 import implement.TwoPathInsertionSort;
 import interfaces.Sort;
+import util.CollectionUtil;
 import util.FileUtil;
 
 /**
@@ -34,6 +36,7 @@ public class MainEntrance {
 		List<Integer> list7 = null;
 		List<Integer> list8 = null;
 		List<Integer> list9 = null;
+		List<Integer> list10 = null;
 		try {
 			list1 = FileUtil.getSortCondition("sort.data");
 			list2 = FileUtil.getSortCondition("sort.data");
@@ -44,6 +47,7 @@ public class MainEntrance {
 			list7 = FileUtil.getSortCondition("sort.data");
 			list8 = FileUtil.getSortCondition("sort.data");
 			list9 = FileUtil.getSortCondition("sort.data");
+			list10 = FileUtil.getSortCondition("sort.data");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -57,137 +61,152 @@ public class MainEntrance {
 		Sort shellInsertSort = new ShellInsertSort(list7);
 		Sort bubbleSort = new BubbleSort(list8);
 		Sort improvedBubbleSort = new ImprovedBubbleSort(list9);
-
+		Sort binaryBubbleSort = new BinaryBubbleSort(list10);
+		
 		long start = System.nanoTime();
 		heapSort.process();
 		long end = System.nanoTime();
-		System.out.println(list1);
+//		System.out.println(list1);
 		System.out.println("堆排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("作为比较的模板链产出");
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
 		start = System.nanoTime();
 		simpleSelectionSort.process();
 		end = System.nanoTime();
-		System.out.println(list2);
+//		System.out.println(list2);
 		System.out.println("简单选择排序耗时：" + (end - start) + "ns");
-
+		
+		System.out.println("1、2比较开始");
+		if (CollectionUtil.equals(list1, list2)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
 		start = System.nanoTime();
 		binarySelectionSort.process();
 		end = System.nanoTime();
-		System.out.println(list3);
+//		System.out.println(list3);
 		System.out.println("二分选择排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、3比较开始");
+		if (CollectionUtil.equals(list1, list3)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
 
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
 		start = System.nanoTime();
 		straightInsertionSort.process();
 		end = System.nanoTime();
-		System.out.println(list4);
+//		System.out.println(list4);
 		System.out.println("直接插入排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、4比较开始");
+		if (CollectionUtil.equals(list1, list4)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
 
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
 		start = System.nanoTime();
 		binaryInsertionSort.process();
 		end = System.nanoTime();
-		System.out.println(list5);
+//		System.out.println(list5);
 		System.out.println("二分插入排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、5比较开始");
+		if (CollectionUtil.equals(list1, list5)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
 
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
 		start = System.nanoTime();
 		twoPathInsertionSort.process();
 		end = System.nanoTime();
-		System.out.println(list6);
+//		System.out.println(list6);
 		System.out.println("二路插入排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、6比较开始");
+		if (CollectionUtil.equals(list1, list6)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		
 		start = System.nanoTime();
 		shellInsertSort.process();
 		end = System.nanoTime();
-		System.out.println(list7);
+//		System.out.println(list7);
 		System.out.println("希尔插入排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、7比较开始");
+		if (CollectionUtil.equals(list1, list7)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		
 		start = System.nanoTime();
 		bubbleSort.process();
 		end = System.nanoTime();
-		System.out.println(list8);
+//		System.out.println(list8);
 		System.out.println("冒泡排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、8比较开始");
+		if (CollectionUtil.equals(list1, list8)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		
 		start = System.nanoTime();
 		improvedBubbleSort.process();
 		end = System.nanoTime();
-		System.out.println(list9);
+//		System.out.println(list9);
 		System.out.println("改善的冒泡排序耗时：" + (end - start) + "ns");
-
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list2.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list2.get(i));
-			}
-
+		
+		System.out.println("1、9比较开始");
+		if (CollectionUtil.equals(list1, list9)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
 		}
-		System.out.println("1、2比较完毕");
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list3.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list3.get(i));
-			}
 
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		start = System.nanoTime();
+		binaryBubbleSort.process();
+		end = System.nanoTime();
+//		System.out.println(list9);
+		System.out.println("改善的冒泡排序(折半)耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、10比较开始");
+		if (CollectionUtil.equals(list1, list10)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
 		}
-		System.out.println("1、3比较完毕");
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list4.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list4.get(i));
-			}
 
-		}
-		System.out.println("1、4比较完毕");
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list5.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list5.get(i));
-			}
-
-		}
-		System.out.println("1、5比较完毕");
-
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list6.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list6.get(i));
-			}
-
-		}
-		System.out.println("1、6比较完毕");
-		
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list7.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list7.get(i));
-			}
-
-		}
-		System.out.println("1、7比较完毕");
-		
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list8.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list8.get(i));
-			}
-
-		}
-		System.out.println("1、8比较完毕");
-		
-		for (int i = 0; i < list1.size(); i++) {
-			if (Integer.compare(list1.get(i), list9.get(i)) != 0) {
-				System.out.println(i + "_" + list1.get(i) + "_" + list9.get(i));
-			}
-
-		}
-		System.out.println("1、9比较完毕");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		
 		
 		

@@ -1,9 +1,9 @@
-package implement;
+package com.jieve.algorithm.sort.implement;
 
 import java.util.List;
 
-import interfaces.Sort;
-import util.MathUtil;
+import com.jieve.algorithm.sort.interfaces.Sort;
+import com.jieve.utils.MathUtil;
 
 /**
  * @ClassName: HeapSort

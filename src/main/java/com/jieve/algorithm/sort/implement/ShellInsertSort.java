@@ -1,8 +1,8 @@
-package implement;
+package com.jieve.algorithm.sort.implement;
 
 import java.util.List;
 
-import interfaces.Sort;
+import com.jieve.algorithm.sort.interfaces.Sort;
 
 /**
  * @ClassName: ShellInsertSort

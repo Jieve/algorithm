@@ -1,4 +1,4 @@
-package implement;
+package com.jieve.algorithm.sort.implement;
 
 import java.util.List;
 

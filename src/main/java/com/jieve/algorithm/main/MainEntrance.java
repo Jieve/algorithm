@@ -1,21 +1,22 @@
-package algorithm;
+package com.jieve.algorithm.main;
 
 import java.io.IOException;
 import java.util.List;
 
-import implement.BinaryBubbleSort;
-import implement.BinarySelectionSort;
-import implement.BubbleSort;
-import implement.HeapSort;
-import implement.ImprovedBubbleSort;
-import implement.QuickSort;
-import implement.ShellInsertSort;
-import implement.SimpleSelectionSort;
-import implement.StraightInsertionSort;
-import implement.TwoPathInsertionSort;
-import interfaces.Sort;
-import util.CollectionUtil;
-import util.FileUtil;
+import com.jieve.algorithm.sort.implement.BinaryBubbleSort;
+import com.jieve.algorithm.sort.implement.BinarySelectionSort;
+import com.jieve.algorithm.sort.implement.BubbleSort;
+import com.jieve.algorithm.sort.implement.HeapSort;
+import com.jieve.algorithm.sort.implement.ImprovedBubbleSort;
+import com.jieve.algorithm.sort.implement.MergeSort;
+import com.jieve.algorithm.sort.implement.QuickSort;
+import com.jieve.algorithm.sort.implement.ShellInsertSort;
+import com.jieve.algorithm.sort.implement.SimpleSelectionSort;
+import com.jieve.algorithm.sort.implement.StraightInsertionSort;
+import com.jieve.algorithm.sort.implement.TwoPathInsertionSort;
+import com.jieve.algorithm.sort.interfaces.Sort;
+import com.jieve.utils.CollectionUtil;
+import com.jieve.utils.FileUtil;
 
 /**
  * @ClassName: MainEntrance
@@ -39,6 +40,7 @@ public class MainEntrance {
 		List<Integer> list9 = null;
 		List<Integer> list10 = null;
 		List<Integer> list11 = null;
+		List<Integer> list12 = null;
 		try {
 			list1 = FileUtil.getSortCondition("sort.data");
 			list2 = FileUtil.getSortCondition("sort.data");
@@ -51,6 +53,7 @@ public class MainEntrance {
 			list9 = FileUtil.getSortCondition("sort.data");
 			list10 = FileUtil.getSortCondition("sort.data");
 			list11 = FileUtil.getSortCondition("sort.data");
+			list12 = FileUtil.getSortCondition("sort.data");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -66,6 +69,7 @@ public class MainEntrance {
 		Sort improvedBubbleSort = new ImprovedBubbleSort(list9);
 		Sort binaryBubbleSort = new BinaryBubbleSort(list10);
 		Sort quickSort = new QuickSort(list11);
+		Sort mergeSort = new MergeSort(list12);
 		
 		long start = System.nanoTime();
 		heapSort.process();
@@ -225,6 +229,21 @@ public class MainEntrance {
 			System.out.println("差异如上");
 		}
 
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		start = System.nanoTime();
+		mergeSort.process();
+		end = System.nanoTime();
+//		System.out.println(list11);
+		System.out.println("归并排序耗时：" + (end - start) + "ns");
+		
+		System.out.println("1、12比较开始");
+		if (CollectionUtil.equals(list1, list12)) {
+			System.out.println("并无差异");
+		}else {
+			System.out.println("差异如上");
+		}
+		
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		
 		

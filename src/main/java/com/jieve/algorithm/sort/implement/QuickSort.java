@@ -1,8 +1,8 @@
-package implement;
+package com.jieve.algorithm.sort.implement;
 
 import java.util.List;
 
-import interfaces.Sort;
+import com.jieve.algorithm.sort.interfaces.Sort;
 
 /**
 * @ClassName: QuickSort
@@ -58,6 +58,7 @@ public class QuickSort extends BaseSort implements Sort {
 		}
 	}
 	
+	//算法改进思路：
 	// 只对长度大于k的子序列递归调用快速排序,让原序列基本有序，然后再对整个基本有序序列用插入排序算法排序。
 	//实践证明，改进后的算法时间复杂度有所降低，且当k取值为 8 左右时,改进算法的性能最佳。
 

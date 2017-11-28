@@ -1,4 +1,4 @@
-package util;
+package com.jieve.utils;
 
 /**
 * @ClassName: MathUtil

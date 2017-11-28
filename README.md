@@ -17,11 +17,17 @@
 	* ImprovedBubbleSort（改进的冒泡排序）
 	* BinaryBubbleSort（折半的冒泡排序）
 	* QuickSort（快速排序）
-	
+4. 归并排序：
+	* MergeSort（归并排序）
 
 各时间复杂度下数据量与运行时间的比较：
 
  <img src="http://my.csdn.net/uploads/201207/21/1342856655_3698.jpg"></img>
+
+***
+### 参考文档：
+
+* [八大排序算法](http://blog.csdn.net/hguisu/article/details/7776068)
 
 ***
 

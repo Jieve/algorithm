@@ -1,4 +1,4 @@
-package com.jieve.algorithm.sort.interfaces;
+package com.jieve.algorithm.interfaces;
 
 /**
 * @ClassName: Sort

@@ -3,6 +3,7 @@ package com.jieve.algorithm.main;
 import java.io.IOException;
 import java.util.List;
 
+import com.jieve.algorithm.interfaces.Sort;
 import com.jieve.algorithm.sort.implement.BinaryBubbleSort;
 import com.jieve.algorithm.sort.implement.BinarySelectionSort;
 import com.jieve.algorithm.sort.implement.BubbleSort;
@@ -14,7 +15,6 @@ import com.jieve.algorithm.sort.implement.ShellInsertSort;
 import com.jieve.algorithm.sort.implement.SimpleSelectionSort;
 import com.jieve.algorithm.sort.implement.StraightInsertionSort;
 import com.jieve.algorithm.sort.implement.TwoPathInsertionSort;
-import com.jieve.algorithm.sort.interfaces.Sort;
 import com.jieve.utils.CollectionUtil;
 import com.jieve.utils.FileUtil;
 

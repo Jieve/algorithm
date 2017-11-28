@@ -2,7 +2,7 @@ package com.jieve.algorithm.sort.implement;
 
 import java.util.List;
 
-import com.jieve.algorithm.sort.interfaces.Sort;
+import com.jieve.algorithm.interfaces.Sort;
 
 /**
  * @ClassName: StraightInsertionSort

@@ -51,6 +51,19 @@ public class MainEntrance {
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//maxAreaOfIsland
+		System.out.println("----------------------------------------findMaxConsecutiveOnes---------------------------------------------");
+		int[][] grid = {{1,1,0,1,1},
+				{1,0,0,0,0},
+				{0,0,0,0,1},
+				{1,1,0,1,1}};
+		System.out.println("array:\t" + CollectionUtil.array2String(grid, 2));
+		System.out.println("result:\t" + solution.maxAreaOfIsland(grid));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 	}
 
 }

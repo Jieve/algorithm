@@ -114,5 +114,46 @@ public enum Solution {
 		}
 		return max;
 	}
+	
+	 /**
+	* @Title: maxAreaOfIsland
+	* @Description: Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
+	* @Url: https://leetcode.com/problems/max-area-of-island/description/
+	* @param @param grid
+	* @param @return
+	* @return int
+	* @throws
+	*/
+	public int maxAreaOfIsland(int[][] grid) {
+		 int result = 0;
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+				result = Math.max(result, countArea(grid, i, j));
+			}
+		}
+		return result;
+	 }
+	 
+	 /**
+	* @Title: countArea
+	* @Description: DFS递归实现查找
+	* @param @param grid
+	* @param @param i
+	* @param @param j
+	* @param @return
+	* @return int
+	* @throws
+	*/
+	private int countArea(int[][] grid,int i,int j) {
+		 if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) return 0;  
+	        if (grid[i][j] == 1)  
+	        {  
+	            grid[i][j] = 0;  
+	            return  1 + countArea(grid, i, j + 1) + countArea(grid, i + 1, j)  
+	                + countArea(grid, i, j - 1) + countArea(grid, i - 1, j);  
+	        }  
+	        return 0; 
+		
+	}
 
 }

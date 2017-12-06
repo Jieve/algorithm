@@ -1,6 +1,8 @@
 package com.jieve.leetcode;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public enum Solution {
 	
@@ -125,14 +127,14 @@ public enum Solution {
 	* @throws
 	*/
 	public int maxAreaOfIsland(int[][] grid) {
-		 int result = 0;
+		int result = 0;
 		for (int i = 0; i < grid.length; i++) {
 			for (int j = 0; j < grid[i].length; j++) {
 				result = Math.max(result, countArea(grid, i, j));
 			}
 		}
 		return result;
-	 }
+	}
 	 
 	 /**
 	* @Title: countArea
@@ -144,16 +146,41 @@ public enum Solution {
 	* @return int
 	* @throws
 	*/
-	private int countArea(int[][] grid,int i,int j) {
-		 if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) return 0;  
-	        if (grid[i][j] == 1)  
-	        {  
-	            grid[i][j] = 0;  
-	            return  1 + countArea(grid, i, j + 1) + countArea(grid, i + 1, j)  
-	                + countArea(grid, i, j - 1) + countArea(grid, i - 1, j);  
-	        }  
-	        return 0; 
-		
+	private int countArea(int[][] grid, int i, int j) {
+		if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length)
+			return 0;
+		if (grid[i][j] == 1) {
+			grid[i][j] = 0;
+			return 1 + countArea(grid, i, j + 1) + countArea(grid, i + 1, j) + countArea(grid, i, j - 1)
+					+ countArea(grid, i - 1, j);
+		}
+		return 0;
+
 	}
+	
+    /**
+    * @Title: findDisappearedNumbers
+    * @Description: Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.Find all the elements of [1, n] inclusive that do not appear in this array.
+    * @Url: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
+    * @refer: https://www.cnblogs.com/grandyang/p/6222149.html
+    * @param @param nums
+    * @param @return
+    * @return List<Integer>
+    * @throws
+    */
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+		List<Integer> list = new LinkedList<>();
+		for (int i = 0; i < nums.length; i++) {
+			int idx = Math.abs(nums[i])-1;
+			nums[idx] = nums[idx] > 0?-nums[idx]:nums[idx];
+		}
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i]>0) {
+				list.add(i+ 1);
+			}
+		}
+		return list;
+        
+    }
 
 }

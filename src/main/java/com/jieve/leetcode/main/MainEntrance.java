@@ -54,13 +54,23 @@ public class MainEntrance {
 		
 		
 		//maxAreaOfIsland
-		System.out.println("----------------------------------------findMaxConsecutiveOnes---------------------------------------------");
+		System.out.println("----------------------------------------maxAreaOfIsland---------------------------------------------");
 		int[][] grid = {{1,1,0,1,1},
 				{1,0,0,0,0},
 				{0,0,0,0,1},
 				{1,1,0,1,1}};
 		System.out.println("array:\t" + CollectionUtil.array2String(grid, 2));
 		System.out.println("result:\t" + solution.maxAreaOfIsland(grid));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//findDisappearedNumbers
+		System.out.println("----------------------------------------findDisappearedNumbers---------------------------------------------");
+		int[] nums = {4,3,2,7,8,2,3,1};
+		System.out.println("array:\t" + CollectionUtil.array2String(nums, 1));
+		System.out.println("result:\t" + solution.findDisappearedNumbers(nums));
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");

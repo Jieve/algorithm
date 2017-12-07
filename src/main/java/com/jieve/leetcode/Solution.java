@@ -182,5 +182,28 @@ public enum Solution {
 		return list;
         
     }
+    
+	/**
+	* @Title: isOneBitCharacter
+	* @Description: We have two special characters. The first character can be represented by one bit 0. The second character can be represented by two bits (10 or 11).Now given a string represented by several bits. Return whether the last character must be a one-bit character or not. The given string will always end with a zero.
+	* @Url: https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
+	* @refer： http://blog.csdn.net/mupengfei6688/article/details/78609842
+	* @param @param bits
+	* @param @return
+	* @return boolean
+	* @throws
+	*/
+	public boolean isOneBitCharacter(int[] bits) {
+
+		int idx;
+		for (idx = 0; idx < bits.length - 1;) {
+			if (bits[idx] == 1) {
+				idx += 2;
+			} else {
+				idx++;
+			}
+		}
+		return idx == bits.length - 1;
+	}
 
 }

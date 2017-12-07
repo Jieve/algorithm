@@ -74,6 +74,16 @@ public class MainEntrance {
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//1-bit and 2-bit Characters
+		System.out.println("----------------------------------------1-bit and 2-bit Characters---------------------------------------------");
+		int[] bits = {1,0,1,1,0,1,0,0};
+		System.out.println("array:\t" + CollectionUtil.array2String(bits, 1));
+		System.out.println("result:\t" + solution.isOneBitCharacter(bits));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 	}
 
 }

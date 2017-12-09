@@ -309,4 +309,41 @@ public enum Solution {
 		}
 		return result;
 	}
+	
+	/**
+	* @Title: findShortestSubArray
+	* @Description: Given a non-empty array of non-negative integers nums, the degree of this array is defined as the maximum frequency of any one of its elements.
+	* @Url: https://leetcode.com/problems/degree-of-an-array/description/
+	* @param @param nums
+	* @param @return
+	* @return int
+	* @throws
+	*/
+	public int findShortestSubArray(int[] nums) {
+		String start = "start";
+		String degree = "degree";
+		int curDegree = 0;
+		int shortestLength = 0;
+
+		Map<Integer, Map<String, Integer>> map = new HashMap<>();
+
+		for (int i = 0; i < nums.length; i++) {
+			if (map.get(nums[i]) == null) {
+				Map<String, Integer> record = new HashMap<>();
+				record.put(start, i);
+				record.put(degree, 1);
+				map.put(nums[i], record);
+			} else {
+				map.get(nums[i]).put(degree, map.get(nums[i]).get(degree) + 1);
+			}
+			if (curDegree < map.get(nums[i]).get(degree)) {
+				curDegree = map.get(nums[i]).get(degree);
+				shortestLength = i - map.get(nums[i]).get(start) + 1;
+			} else if (curDegree == map.get(nums[i]).get(degree)) {
+				shortestLength = shortestLength < i - map.get(nums[i]).get(start) + 1 ? shortestLength
+						: i - map.get(nums[i]).get(start) + 1;
+			}
+		}
+		return shortestLength;
+	}
 }

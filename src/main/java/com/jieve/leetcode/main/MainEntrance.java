@@ -125,6 +125,16 @@ public class MainEntrance {
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//Degree of an Array
+		System.out.println("----------------------------------------Degree of an Array---------------------------------------------");
+		int[] nums9 = {1,2,2,3,1,4,2};
+		System.out.println("array:\t" + CollectionUtil.array2String(nums9, 1));
+		System.out.println("result:\t" + solution.findShortestSubArray(nums9));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 	}
 
 }

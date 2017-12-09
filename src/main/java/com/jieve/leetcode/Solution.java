@@ -1,8 +1,10 @@
 package com.jieve.leetcode;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public enum Solution {
 	
@@ -205,5 +207,106 @@ public enum Solution {
 		}
 		return idx == bits.length - 1;
 	}
+	
+	/**
+	* @Title: moveZeroes
+	* @Description: Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+	* @Url: https://leetcode.com/problems/move-zeroes/description/
+	* @Note: 1、You must do this in-place without making a copy of the array.2、Minimize the total number of operations.
+	* @param @param nums
+	* @return void    returnType
+	* @throws
+	*/
+	public void moveZeroes(int[] nums) {
+		int count = 0;
+		int idx = 0;
+		while (idx < nums.length-count) {
+			if (nums[idx] == 0) {
+				count++;
+				for (int j = idx + 1; j <= nums.length - count; j++) {
+					nums[j - 1] = nums[j];
+				}
+				nums[nums.length-count] = 0;
+				idx--;
+			}
+			idx++;
+		}
+	}
+	
+	/**
+	* @Title: maxProfit
+	* @Description: Design an algorithm to find the maximum profit.
+	* @Url: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+	* @refer: https://www.cnblogs.com/grandyang/p/4280803.html
+	* @param @param prices
+	* @param @return
+	* @return int
+	* @throws
+	*/
+	public int maxProfit(int[] prices) {
+		int profit = 0;
+		for (int i = 1; i < prices.length; i++) {
+			if (prices[i]>prices[i-1]) {
+				profit += prices[i]-prices[i-1];
+			}
+		}
+		return profit;
+        
+    }
+	
+	/**
+	* @Title: majorityElement
+	* @Description: Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.You may assume that the array is non-empty and the majority element always exist in the array.
+	* @Url: https://leetcode.com/problems/majority-element/description/
+	* @param @param nums
+	* @param @return
+	* @return int
+	* @throws
+	*/
+	public int majorityElement(int[] nums) {
+		int cur = nums[0];
+		int count = 0;
+		int curCount;
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < nums.length; i++) {
+			curCount = map.get(nums[i])==null?0:map.get(nums[i]);
+			map.put(nums[i], ++curCount);
+			cur = count<curCount?nums[i]:cur;
+			count = count<curCount?curCount:count;
+			if (count>nums.length/2) {
+				break;
+			}
+		}
+		return cur;
+        
+    }
+	
+	/**
+	* @Title: twoSumA
+	* @Description: Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
+	* @Url: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+	* @param @param numbers
+	* @param @param target
+	* @param @return
+	* @return int[]
+	* @throws
+	*/
+	public int[] twoSumA(int[] numbers, int target) {
+		int[] result = new int[2];
+		int i = 0;
+		boolean flag = true;
+		while (i < numbers.length && numbers[i] <= target && flag) {
 
+			for (int j = i + 1; j < numbers.length && numbers[j] <= target - numbers[i]; j++) {
+				if (numbers[i] + numbers[j] == target) {
+					result[0] = i + 1;
+					result[1] = j + 1;
+					flag = false;
+					break;
+				}
+			}
+			i++;
+		}
+		return result;
+	}
 }

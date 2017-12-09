@@ -68,9 +68,9 @@ public class MainEntrance {
 		
 		//findDisappearedNumbers
 		System.out.println("----------------------------------------findDisappearedNumbers---------------------------------------------");
-		int[] nums = {4,3,2,7,8,2,3,1};
-		System.out.println("array:\t" + CollectionUtil.array2String(nums, 1));
-		System.out.println("result:\t" + solution.findDisappearedNumbers(nums));
+		int[] nums6 = {4,3,2,7,8,2,3,1};
+		System.out.println("array:\t" + CollectionUtil.array2String(nums6, 1));
+		System.out.println("result:\t" + solution.findDisappearedNumbers(nums6));
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -81,6 +81,47 @@ public class MainEntrance {
 		int[] bits = {1,0,1,1,0,1,0,0};
 		System.out.println("array:\t" + CollectionUtil.array2String(bits, 1));
 		System.out.println("result:\t" + solution.isOneBitCharacter(bits));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//Move Zeroes
+		System.out.println("----------------------------------------Move Zeroes---------------------------------------------");
+		int[] nums7 = {0,1,0,3,12};
+		System.out.println("array:\t" + CollectionUtil.array2String(nums7, 1));
+		solution.moveZeroes(nums7);
+		System.out.println("result:\t" + CollectionUtil.array2String(nums7, 1));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//maxProfit
+		System.out.println("----------------------------------------maxProfit---------------------------------------------");
+		int[] prices = {5,1,8,23,12,5,19};
+		System.out.println("array:\t" + CollectionUtil.array2String(prices, 1));
+		System.out.println("result:\t" + solution.maxProfit(prices));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//majorityElement
+		System.out.println("----------------------------------------majorityElement---------------------------------------------");
+		int[] nums8 = {5,5,6,6,6,5,5};
+		System.out.println("array:\t" + CollectionUtil.array2String(nums8, 1));
+		System.out.println("result:\t" + solution.majorityElement(nums8));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//twoSumA
+		System.out.println("----------------------------------------twoSumA---------------------------------------------");
+		int[] numbers = {3,24,50,79,88,150,345};
+		System.out.println("array:\t" + CollectionUtil.array2String(numbers, 1));
+		System.out.println("result:\t" + CollectionUtil.array2String(solution.twoSumA(numbers, 200), 1));
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");

@@ -135,6 +135,16 @@ public class MainEntrance {
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		
+		//Contains Duplicate
+		System.out.println("----------------------------------------Contains Duplicate---------------------------------------------");
+		int[] nums10 = {1,2,7,3,10,4,9};
+		System.out.println("array:\t" + CollectionUtil.array2String(nums10, 1));
+		System.out.println("result:\t" + solution.containsDuplicate(nums10));
+		
+		
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 	}
 
 }

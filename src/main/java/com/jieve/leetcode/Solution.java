@@ -2,9 +2,11 @@ package com.jieve.leetcode;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public enum Solution {
 	
@@ -346,4 +348,48 @@ public enum Solution {
 		}
 		return shortestLength;
 	}
+	
+	/**
+	* @Title: containsDuplicate
+	* @Description: Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+	* @Url: https://leetcode.com/problems/contains-duplicate/description/
+	* @param @param nums
+	* @param @return
+	* @return boolean
+	* @throws
+	*/
+	public boolean containsDuplicate(int[] nums) {
+		Set<Integer> set = new HashSet<>();
+		for (int i = 0; i < nums.length; i++) {
+			set.add(nums[i]);
+		}
+		return nums.length != set.size();
+	}
+	
+	public int maximumProduct(int[] nums) {
+		int temp;
+		for (int i = 2; i >= 0; i--) {
+			for (int j = 0; j < i; j++) {
+				if (nums[j]>nums[i]) {
+					temp = nums[j];
+					nums[j] = nums[i];
+					nums[i] = temp;
+				}
+			}
+		}
+		for (int i = 3; i < nums.length; i++) {
+			if (nums[i]>=nums[2]) {
+				nums[0] = nums[1];
+				nums[1] = nums[2];
+				nums[2] = nums[i];
+			} else if (nums[i]>=nums[1]) {
+				nums[0] = nums[1];
+				nums[1] = nums[i];
+			}else if (nums[i]>=nums[0]) {
+				nums[0] = nums[i];
+			}
+			
+		}
+		return nums[0]*nums[1]*nums[2];
+    }
 }

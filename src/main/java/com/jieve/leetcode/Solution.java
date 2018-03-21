@@ -1,6 +1,7 @@
 package com.jieve.leetcode;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -366,30 +367,111 @@ public enum Solution {
 		return nums.length != set.size();
 	}
 	
+	/**
+	* @Title: maximumProduct
+	* @Description: Given an integer array, find three numbers whose product is maximum and output the maximum product.
+	* @Url: https://leetcode.com/problems/maximum-product-of-three-numbers/description/
+	* @param @param nums
+	* @param @return    param
+	* @return int    returnType
+	* @throws
+	*/
 	public int maximumProduct(int[] nums) {
-		int temp;
-		for (int i = 2; i >= 0; i--) {
-			for (int j = 0; j < i; j++) {
-				if (nums[j]>nums[i]) {
-					temp = nums[j];
-					nums[j] = nums[i];
-					nums[i] = temp;
+		
+		Entity max = new Entity(true, 3);
+		Entity min = new Entity(false, 2);
+		
+		for (int i = 0; i < nums.length; i++) {
+			max.push(nums[i]);
+			min.push(nums[i]);
+		}
+		System.out.println(max.getList());
+		System.out.println(min.getList());
+		return Math.max(min.getList().getLast()*min.getList().getFirst()*max.getList().getLast(), max.getList().getLast()*max.getList().getFirst()*max.getList().get(1));
+    }
+	
+	/**
+	* @ClassName: Entity
+	* @Description: maximumProduct使用内部类
+	* @author yyy
+	* @date 2018年3月21日 下午1:12:16
+	* 
+	*/
+	class Entity {
+		
+		/**
+		 * 标识大小堆
+		 */
+		private boolean flag;
+		
+		/**
+		 * 定义集合大小
+		 */
+		private int size;
+		
+		/**
+		 * 集合容器
+		 */
+		private LinkedList<Integer> list = new LinkedList<>();
+		
+
+		public Entity(boolean flag, int size) {
+			super();
+			this.flag = flag;
+			this.size = size;
+		}
+
+
+		public boolean isFlag() {
+			return flag;
+		}
+
+
+		public void setFlag(boolean flag) {
+			this.flag = flag;
+		}
+
+
+		public int getSize() {
+			return size;
+		}
+
+
+		public void setSize(int size) {
+			this.size = size;
+		}
+
+
+		public LinkedList<Integer> getList() {
+			return list;
+		}
+
+
+		public void setList(LinkedList<Integer> list) {
+			this.list = list;
+		}
+
+
+		public void push(Integer num) {
+			if (list.size() < size) {
+				list.add(num);
+				Collections.sort(list);
+			}else {
+				if (flag) {
+					
+					if (num > list.get(0)) {
+						list.set(0, num);
+						Collections.sort(list);
+					}
+				} else {
+					if (num < list.get(size - 1)) {
+						list.set(size - 1, num);
+						Collections.sort(list);
+					}
 				}
 			}
 		}
-		for (int i = 3; i < nums.length; i++) {
-			if (nums[i]>=nums[2]) {
-				nums[0] = nums[1];
-				nums[1] = nums[2];
-				nums[2] = nums[i];
-			} else if (nums[i]>=nums[1]) {
-				nums[0] = nums[1];
-				nums[1] = nums[i];
-			}else if (nums[i]>=nums[0]) {
-				nums[0] = nums[i];
-			}
-			
-		}
-		return nums[0]*nums[1]*nums[2];
-    }
+
+	}
+	
 }

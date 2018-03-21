@@ -474,4 +474,29 @@ public enum Solution {
 
 	}
 	
+	/**
+	* @Title: isToeplitzMatrix
+	* @Description: A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.Now given an M x N matrix, return True if and only if the matrix is Toeplitz.
+	* @Url: https://leetcode.com/problems/toeplitz-matrix/description/
+	* @param @param matrix
+	* @param @return    param
+	* @return boolean    returnType
+	* @throws
+	*/
+	public boolean isToeplitzMatrix(int[][] matrix) {
+		Set<Integer> set = new HashSet<>();
+		for (int i = -matrix.length+1; i < matrix[0].length; i++) {
+			for (int j = 0; j < matrix.length; j++) {
+				if (i+j>=0&&i+j<matrix[0].length) {
+					set.add(matrix[j][i+j]);
+				}
+			}
+			if (set.size() != 1) {
+				return false;
+			}
+			set.clear();
+		}
+		return true;
+	}
+	
 }

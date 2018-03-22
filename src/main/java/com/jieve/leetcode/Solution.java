@@ -1,9 +1,11 @@
 package com.jieve.leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -499,4 +501,39 @@ public enum Solution {
 		return true;
 	}
 	
+	/**
+	* @Title: imageSmoother
+	* @Description: Given a 2D integer matrix M representing the gray scale of an image, you need to design a smoother to make the gray scale of each cell becomes the average gray scale (rounding down) of all the 8 surrounding cells and itself. If a cell has less than 8 surrounding cells, then use as many as you can.
+	* @Url: https://leetcode.com/problems/image-smoother/description/
+	* @param @param M
+	* @param @return    param
+	* @return int[][]    returnType
+	* @throws
+	*/
+	public int[][] imageSmoother(int[][] M) {
+		List<Integer> list = new ArrayList<>();
+		int sum = 0;
+		int[][] result = new int[M.length][M[0].length];
+		for (int i = 0; i < M.length; i++) {
+			
+			for (int j = 0; j < M[0].length; j++) {
+				
+				for (int m = i-1; m <= i+1; m++) {
+					for (int n = j-1; n <= j+1; n++) {
+						if (m>=0&&m<M.length&&n>=0&&n<M[0].length) {
+							list.add(M[m][n]);
+						}
+					}
+				}
+				for (int num : list) {
+					sum += num;
+				}
+				result[i][j] = sum/list.size();
+				list.clear();
+				sum = 0;
+			}
+		}
+		return result;
+        
+    }
 }

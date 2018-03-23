@@ -5,11 +5,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.jieve.utils.CollectionUtil;
 
 public enum Solution {
 	
@@ -535,5 +536,32 @@ public enum Solution {
 		}
 		return result;
         
+    }
+	
+	/**
+	* @Title: missingNumber
+	* @Description: Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
+	* @Url: https://leetcode.com/problems/missing-number/description/
+	* @param @param nums
+	* @param @return    param
+	* @return int    returnType
+	* @throws
+	*/
+	public int missingNumber(int[] nums) {
+		Arrays.sort(nums);
+		
+		System.out.println(CollectionUtil.array2String(nums, 1));
+		int result = 0;
+		for (int i = 0; i < nums.length/2 + 1; i++) {
+			if (i!=nums[i]) {
+				result = i;
+				break;
+			}
+			if (nums.length-i!=nums[nums.length-i-1]) {
+				result = nums.length-i;
+				break;
+			}
+		}
+		return result;
     }
 }

@@ -564,4 +564,32 @@ public enum Solution {
 		}
 		return result;
     }
+
+	/**
+	 * @Title: removeDuplicates
+	 * @Description: Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
+	 * @Url: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+	 * @param @param nums
+	 * @param @return    param
+	 * @return int    returnType
+	 * @throws
+	 */
+	public int removeDuplicates(int[] nums) {
+		if (nums.length == 0) {
+			return 0;
+		}
+		int flag = nums[0];
+		int length = 1;
+		int pos = 1;
+		for (int i = 1; i < nums.length; i++) {
+			if(flag != nums[i]) {
+				length++;
+				flag = nums[i];
+				nums[pos] = nums[i];
+				pos++;
+			}
+		}
+		return length;
+	}
+
 }

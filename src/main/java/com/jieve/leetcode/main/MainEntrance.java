@@ -145,6 +145,16 @@ public class MainEntrance {
 		
 		
 		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+		//Remove Duplicates from Sorted Array
+		System.out.println("----------------------------------------Remove Duplicates from Sorted Array---------------------------------------------");
+		int[] nums11 = {1,2,2,3,3,4,4,5,6,7,7,7,7,9};
+		System.out.println("array:\t" + CollectionUtil.array2String(nums11, 1));
+		System.out.println("result:\t" + "length: " + solution.removeDuplicates(nums11) + ",nums:" + CollectionUtil.array2String(nums11, 1));
+
+
+		System.out.println("\n" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
 	}
 
 }
